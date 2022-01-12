@@ -40,7 +40,7 @@ module.exports = ({
       return callback(new ReplaceColorError('PARAMETER_INVALID', 'options.deltaE'))
     }
 
-    Jimp.read(image)
+    Jimp.default.read(image)
       .then((jimpObject) => {
         const targetLABColor = convertColor(colors.type, 'lab', colors.targetColor)
         const replaceRGBColor = convertColor(colors.type, 'rgb', colors.replaceColor)
